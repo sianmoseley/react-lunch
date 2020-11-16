@@ -1,16 +1,33 @@
 import React from "react";
-//feature 1
+import Meals from "./components/Meals";
+import data from "./data.json";
 
-function App() {
-  return (
-    <div className="grid-container">
-      <header>
-        <a href="/">Lunch App</a>
-      </header>
-      <main>Product List</main>
-      <footer>Lunch App 2020: All rights are reserved.</footer>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      meals: data.meals,
+    };
+  }
+
+  render() {
+    return (
+      <div className="grid-container">
+        <header>
+          <a href="/">Production Lunch App</a>
+        </header>
+        <main>
+          <div className="content">
+            <div className="main">
+              <Meals meals={this.state.meals} />
+            </div>
+            <div className="sidebar">Basket Items</div>
+          </div>
+        </main>
+        <footer>Production Lunch App 2020: All rights are reserved.</footer>
+      </div>
+    );
+  }
 }
 
 export default App;

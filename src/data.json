@@ -1,0 +1,22 @@
+{
+    "meals":[
+       {
+           "_id":"meal1", "title": "Burger and Chips"
+       },
+       {
+           "_id":"meal2", "title": "Salmon, Peas and Potatoes"
+       },
+       {
+           "_id":"meal3", "title": "Vegan Chili and Rice"
+       },
+       {
+           "_id":"meal4", "title": "Chocolate Brownie"
+       },
+       {
+           "_id":"meal5", "title": "Apple Crumble"
+       }
+
+
+
+    ]
+}
