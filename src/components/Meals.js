@@ -9,7 +9,12 @@ export default class Meals extends Component {
             <li key={meal._id}>
               <div className="meal">
                 <p>{meal.title}</p>
-                <button className="button primary">Add to Basket</button>
+                <button
+                  onClick={() => this.props.addToCart(meal)}
+                  className="button primary"
+                >
+                  Add to Basket
+                </button>
               </div>
             </li>
           ))}
