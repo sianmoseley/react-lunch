@@ -75,15 +75,6 @@ export default class Cart extends Component {
                   <form onSubmit={this.createOrder}>
                     <ul className="form-container">
                       <li>
-                        <label>Email</label>
-                        <input
-                          name="email"
-                          type="email"
-                          required
-                          onChange={this.handleInput}
-                        ></input>
-                      </li>
-                      <li>
                         <label>Name</label>
                         <input
                           name="name"
@@ -93,11 +84,19 @@ export default class Cart extends Component {
                         ></input>
                       </li>
                       <li>
-                        <label>Additional Info</label>
+                        <label>Email</label>
+                        <input
+                          name="email"
+                          type="email"
+                          required
+                          onChange={this.handleInput}
+                        ></input>
+                      </li>
+                      <li>
+                        <label>Any Additional Order Info?</label>
                         <input
                           name="additionalInfo"
                           type="text"
-                          required
                           onChange={this.handleInput}
                         ></input>
                       </li>
