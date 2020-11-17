@@ -12,14 +12,14 @@ class App extends React.Component {
         <BrowserRouter>
           <div className="grid-container">
             <header>
-              <Link to="/">Production Lunch App</Link>
-              <Link to="/admin">Admin</Link>
+              <Link to="/">LUNCH APP</Link>
+              <Link to="/admin">ADMIN</Link>
             </header>
             <main>
               <Route path="/admin" component={AdminScreen} />
               <Route path="/" component={HomeScreen} exact />
             </main>
-            <footer>Production Lunch App 2020: All rights are reserved.</footer>
+            <footer>Built by Sian.</footer>
           </div>
         </BrowserRouter>
       </Provider>

@@ -44,13 +44,14 @@ header {
   align-items: center;
   padding: 0.5rem;
   font-weight: bold;
-  font-size: x-large;
+  font-size: medium;
 }
 
 header a {
   color: black;
   text-decoration: none;
   margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 main {
@@ -65,6 +66,9 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: smaller;
+  padding: 0.5rem;
+  margin-top: 1rem;
 }
 
 .content {
@@ -76,13 +80,12 @@ footer {
   flex: 3 60rem;
 }
 
-.sidebar {
-  flex: 1 20rem;
-}
-
 /*meals*/
 
 .meals {
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
   justify-content: center;
   align-items: center;
   list-style-type: none;
@@ -92,6 +95,7 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-left: 20px;
 }
 .meal p {
   font-weight: bold;
@@ -106,15 +110,17 @@ footer {
   background-color: #ffda00;
 }
 
-/* Index.css */
+/* Cart */
 
 .cart {
-  padding: 1rem;
-  margin: 1rem;
+  padding: 0;
+  margin: 0;
   display: flex;
 }
 
 .cart-header {
+  padding: 1rem;
+  margin: 1rem;
   border-bottom: 0.1rem #c0c0c0 solid;
 }
 

@@ -40,10 +40,10 @@ class Cart extends Component {
     return (
       <div>
         {cartItems.length === 0 ? (
-          <div className="cart cart-header">Cart is empty</div>
+          <div className="cart cart-header">Basket is empty</div>
         ) : (
           <div className="cart cart-header">
-            You have {cartItems.length} item in your cart{" "}
+            You have {cartItems.length} item in your basket{" "}
           </div>
         )}
 
@@ -58,7 +58,7 @@ class Cart extends Component {
                 <h2>Order {order._id}</h2>
                 <ul>
                   <li>
-                    <div>Name:</div>
+                    <div>Full Name:</div>
                     <div>{order.name}</div>
                   </li>
                   <li>
@@ -74,7 +74,7 @@ class Cart extends Component {
                     <div>{order.createdAt}</div>
                   </li>
                   <li>
-                    <div>Cart Items</div>
+                    <div>Basket Items</div>
                     <div>
                       {order.cartItems.map((x) => (
                         <div>
@@ -125,7 +125,7 @@ class Cart extends Component {
                   <form onSubmit={this.createOrder}>
                     <ul className="form-container">
                       <li>
-                        <label>Name</label>
+                        <label>Full Name</label>
                         <input
                           name="name"
                           type="text"
