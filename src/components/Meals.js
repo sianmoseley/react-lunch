@@ -29,9 +29,9 @@ class Meals extends Component {
                   <p>{meal.title}</p>
                   <button
                     onClick={() => this.props.addToCart(meal)}
-                    className="button primary"
+                    className="button"
                   >
-                    Add to Basket
+                    Add
                   </button>
                 </div>
               </li>

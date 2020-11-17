@@ -9,8 +9,6 @@ export default class HomeScreen extends Component {
         <div className="content">
           <div className="main">
             <Meals />
-          </div>
-          <div className="sidebar">
             <Cart />
           </div>
         </div>
