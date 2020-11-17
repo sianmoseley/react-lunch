@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchMeals } from "../actions/mealActions";
+import { addToCart } from "../actions/cartActions";
 
 class Meals extends Component {
   constructor(props) {
@@ -44,4 +45,5 @@ class Meals extends Component {
 
 export default connect((state) => ({ meals: state.meals.items }), {
   fetchMeals,
+  addToCart,
 })(Meals);
