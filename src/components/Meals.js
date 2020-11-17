@@ -1,25 +1,47 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { fetchMeals } from "../actions/mealActions";
 
-export default class Meals extends Component {
+class Meals extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      meal: null,
+    };
+  }
+
+  componentDidMount() {
+    this.props.fetchMeals();
+  }
+
   render() {
+    // const { meal } = this.state;
     return (
       <div>
-        <ul className="meals">
-          {this.props.meals.map((meal) => (
-            <li key={meal._id}>
-              <div className="meal">
-                <p>{meal.title}</p>
-                <button
-                  onClick={() => this.props.addToCart(meal)}
-                  className="button primary"
-                >
-                  Add to Basket
-                </button>
-              </div>
-            </li>
-          ))}
-        </ul>
+        {!this.props.meals ? (
+          <div>Loading...</div>
+        ) : (
+          <ul className="meals">
+            {this.props.meals.map((meal) => (
+              <li key={meal._id}>
+                <div className="meal">
+                  <p>{meal.title}</p>
+                  <button
+                    onClick={() => this.props.addToCart(meal)}
+                    className="button primary"
+                  >
+                    Add to Basket
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     );
   }
 }
+
+export default connect((state) => ({ meals: state.meals.items }), {
+  fetchMeals,
+})(Meals);
