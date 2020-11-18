@@ -51,7 +51,7 @@ const Order = mongoose.model(
         default: shortid.generate,
       },
       name: String,
-      email: String,
+      // email: String,
       additionalInfo: String,
       cartItems: [
         {
@@ -70,8 +70,8 @@ const Order = mongoose.model(
 app.post("/api/orders", async (req, res) => {
   if (
     !req.body.name ||
-    !req.body.email ||
-    !req.body.additionalInfo ||
+    // !req.body.email ||
+    req.body.additionalInfo ||
     !req.body.cartItems
   ) {
     return res.send({ message: "Data is required." });

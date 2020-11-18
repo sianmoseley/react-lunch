@@ -10,7 +10,7 @@ class Cart extends Component {
     super(props);
     this.state = {
       name: "",
-      email: "",
+      // email: "",
       additionalInfo: "",
       showCheckout: false,
       modalIsOpen: false,
@@ -25,7 +25,7 @@ class Cart extends Component {
     e.preventDefault();
     const order = {
       name: this.state.name,
-      email: this.state.email,
+      // email: this.state.email,
       additionalInfo: this.state.additionalInfo,
       cartItems: this.props.cartItems,
     };
@@ -63,10 +63,10 @@ class Cart extends Component {
                     <div>Full Name:</div>
                     <div>{order.name}</div>
                   </li>
-                  <li>
+                  {/* <li>
                     <div>Email:</div>
                     <div>{order.email}</div>
-                  </li>
+                  </li> */}
                   <li>
                     <div>Additional Order Info:</div>
                     <div>{order.additionalInfo}</div>
@@ -135,7 +135,7 @@ class Cart extends Component {
                           onChange={this.handleInput}
                         ></input>
                       </li>
-                      <li>
+                      {/* <li>
                         <label>Email</label>
                         <input
                           name="email"
@@ -143,7 +143,7 @@ class Cart extends Component {
                           required
                           onChange={this.handleInput}
                         ></input>
-                      </li>
+                      </li> */}
                       <li>
                         <label>Any Additional Order Info?</label>
                         <input
