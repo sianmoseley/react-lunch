@@ -6,6 +6,11 @@ import HomeScreen from "./screens/HomeScreen";
 import AdminScreen from "./screens/AdminScreen";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
       <Provider store={store}>
