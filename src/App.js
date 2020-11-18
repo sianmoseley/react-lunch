@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen";
-import AdminScreen from "./screens/AdminScreen";
+import AdminAuthScreen from "./screens/AdminAuthScreen";
 
 class App extends React.Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class App extends React.Component {
               <Link to="/admin">ADMIN</Link>
             </header>
             <main>
-              <Route path="/admin" component={AdminScreen} />
+              <Route path="/admin" component={AdminAuthScreen} />
               <Route path="/" component={HomeScreen} exact />
             </main>
             <footer>Built by Sian.</footer>

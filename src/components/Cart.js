@@ -13,6 +13,7 @@ class Cart extends Component {
       email: "",
       additionalInfo: "",
       showCheckout: false,
+      modalIsOpen: false,
     };
   }
 
@@ -34,6 +35,7 @@ class Cart extends Component {
   closeModal = () => {
     this.props.clearOrder();
   };
+
   render() {
     const { cartItems, order } = this.props;
 

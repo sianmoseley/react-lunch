@@ -16,10 +16,10 @@ class Orders extends Component {
         <table>
           <thead>
             <tr>
-              <th>ID</th>
+              {/* <th>ID</th> */}
               <th>DATE</th>
               <th>NAME</th>
-              <th>EMAIL</th>
+              {/* <th>EMAIL</th> */}
               <th>ADDITIONAL INFO</th>
               <th>ITEMS</th>
             </tr>
@@ -27,10 +27,10 @@ class Orders extends Component {
           <tbody>
             {orders.map((order) => (
               <tr>
-                <td>{order._id}</td>
+                {/* <td>{order._id}</td> */}
                 <td>{order.createdAt}</td>
                 <td>{order.name}</td>
-                <td>{order.email}</td>
+                {/* <td>{order.email}</td> */}
                 <td>{order.additionalInfo}</td>
                 <td>
                   {order.cartItems.map((item) => (

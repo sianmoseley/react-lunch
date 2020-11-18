@@ -3,7 +3,7 @@ import AdminHomeScreen from "./AdminHomeScreen";
 import fire from "../config/firebase";
 import AdminLoginScreen from "./AdminLoginScreen";
 
-export default class AdminScreen extends Component {
+export default class AdminAuthScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
