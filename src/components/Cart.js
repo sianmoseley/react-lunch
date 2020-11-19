@@ -10,7 +10,7 @@ class Cart extends Component {
     super(props);
     this.state = {
       name: "",
-      // email: "",
+      department: "",
       additionalInfo: "",
       showCheckout: false,
       modalIsOpen: false,
@@ -25,7 +25,7 @@ class Cart extends Component {
     e.preventDefault();
     const order = {
       name: this.state.name,
-      // email: this.state.email,
+      department: this.state.department,
       additionalInfo: this.state.additionalInfo,
       cartItems: this.props.cartItems,
     };
@@ -35,6 +35,10 @@ class Cart extends Component {
   closeModal = () => {
     this.props.clearOrder();
   };
+
+  componentDidMount() {
+    Modal.setAppElement("body");
+  }
 
   render() {
     const { cartItems, order } = this.props;
@@ -63,10 +67,10 @@ class Cart extends Component {
                     <div>Full Name:</div>
                     <div>{order.name}</div>
                   </li>
-                  {/* <li>
-                    <div>Email:</div>
-                    <div>{order.email}</div>
-                  </li> */}
+                  <li>
+                    <div>Department:</div>
+                    <div>{order.department}</div>
+                  </li>
                   <li>
                     <div>Additional Order Info:</div>
                     <div>{order.additionalInfo}</div>
@@ -135,15 +139,15 @@ class Cart extends Component {
                           onChange={this.handleInput}
                         ></input>
                       </li>
-                      {/* <li>
-                        <label>Email</label>
+                      <li>
+                        <label>Department</label>
                         <input
-                          name="email"
-                          type="email"
+                          name="department"
+                          type="text"
                           required
                           onChange={this.handleInput}
                         ></input>
-                      </li> */}
+                      </li>
                       <li>
                         <label>Any Additional Order Info?</label>
                         <input

@@ -22,6 +22,12 @@ export const fetchOrders = () => (dispatch) => {
   fetch("/api/orders")
     .then((res) => res.json())
     .then((data) => {
-      dispatch({ type: FETCH_ORDERS, payload: data });
+      const sortedData = data.sort((a, b) => {
+        const dateAInMillis = new Date(a.createdAt).getTime();
+        const dateBInMillis = new Date(b.createdAt).getTime();
+
+        return dateBInMillis - dateAInMillis;
+      });
+      dispatch({ type: FETCH_ORDERS, payload: sortedData });
     });
 };

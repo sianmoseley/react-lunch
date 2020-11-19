@@ -6,20 +6,22 @@ class Orders extends Component {
   componentDidMount() {
     this.props.fetchOrders();
   }
+
   render() {
     const { orders } = this.props;
+
     return !orders ? (
       <div>No Orders</div>
     ) : (
-      <div className="orders">
+      <div className="orders" key={orders._id}>
         <h2>Orders</h2>
         <table>
           <thead>
             <tr>
-              {/* <th>ID</th> */}
+              <th>ID</th>
               <th>DATE</th>
               <th>NAME</th>
-              {/* <th>EMAIL</th> */}
+              <th>DEPARTMENT</th>
               <th>ADDITIONAL INFO</th>
               <th>ITEMS</th>
             </tr>
@@ -27,10 +29,10 @@ class Orders extends Component {
           <tbody>
             {orders.map((order) => (
               <tr>
-                {/* <td>{order._id}</td> */}
+                <td>{order._id}</td>
                 <td>{order.createdAt}</td>
                 <td>{order.name}</td>
-                {/* <td>{order.email}</td> */}
+                <td>{order.department}</td>
                 <td>{order.additionalInfo}</td>
                 <td>
                   {order.cartItems.map((item) => (
