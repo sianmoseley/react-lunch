@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import fire from "../config/firebase";
 import Orders from "../components/Orders";
+import UpdateMenuScreen from "./UpdateMenuScreen";
+import { BrowserRouter, Link, Route } from "react-router-dom";
 
 export default class AdminHomeScreen extends Component {
   constructor(props) {
@@ -14,12 +16,23 @@ export default class AdminHomeScreen extends Component {
 
   render() {
     return (
-      <div className="order-details">
-        <h3>Admin Homepage</h3>
-        <button onClick={this.logout}>Logout</button>
-        <button>Update Menu</button>
-        <Orders />
-      </div>
+      <BrowserRouter>
+        <div>
+          <ul>
+            <li>
+              <Link to="/UpdateMenuScreen"> Update Menu</Link>
+            </li>
+            <li>
+              <Link to="/ViewOrders"> View Orders</Link>
+            </li>
+            <li>
+              <button onClick={this.logout}>Logout</button>
+            </li>
+          </ul>
+          <Route path="/UpdateMenuScreen" component={UpdateMenuScreen} />
+          <Route path="/ViewOrders" component={Orders} />
+        </div>
+      </BrowserRouter>
     );
   }
 }
