@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { removeFromCart } from "../actions/cartActions";
+import { removeFromCart, onRemove } from "../actions/cartActions";
 import { connect } from "react-redux";
 import { createOrder, clearOrder } from "../actions/orderActions";
 import Modal from "react-modal";
@@ -103,6 +103,7 @@ class Cart extends Component {
                     <div>
                       {item.title} x {item.count}
                     </div>
+                    <button>-</button>
                     <button
                       className="button-remove"
                       onClick={() => this.props.removeFromCart(item)}
@@ -178,5 +179,5 @@ export default connect(
     order: state.order.order,
     cartItems: state.cart.cartItems,
   }),
-  { removeFromCart, createOrder, clearOrder }
+  { removeFromCart, createOrder, clearOrder, onRemove }
 )(Cart);
