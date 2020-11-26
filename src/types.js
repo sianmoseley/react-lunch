@@ -7,3 +7,4 @@ export const CLEAR_CART = "CLEAR_CART";
 export const FETCH_ORDERS = "FETCH_ORDERS";
 
 export const DELETE_MEAL = "DELETE_MEAL";
+export const CREATE_MEAL = "CREATE_MEAL";

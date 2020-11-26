@@ -32,6 +32,9 @@ app.get("/api/meals", async (req, res) => {
 });
 
 app.post("/api/meals", async (req, res) => {
+  if (!req.body.title) {
+    return res.send({ message: "Data is required." });
+  }
   const newMeal = new Meal(req.body);
   const savedMeal = await newMeal.save();
   res.send(savedMeal);

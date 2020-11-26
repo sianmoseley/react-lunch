@@ -1,18 +1,36 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchMeals, deleteMeal } from "../actions/mealActions";
+import { fetchMeals, deleteMeal, createMeal } from "../actions/mealActions";
 
 class UpdateMenuScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
       meal: null,
+      showAddMenu: false,
+      title: "",
     };
   }
 
   componentDidMount() {
     this.props.fetchMeals();
   }
+
+  componentDidUpdate() {
+    this.props.fetchMeals();
+  }
+
+  handleInput = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  createMeal = (e) => {
+    e.preventDefault();
+    const meal = {
+      title: this.state.title,
+    };
+    this.props.createMeal(meal);
+  };
 
   deleteMeal(id) {
     this.props.deleteMeal(id);
@@ -41,7 +59,35 @@ class UpdateMenuScreen extends Component {
             ))}
           </ul>
         )}
-        <button>Add New Menu Item</button>
+        <button
+          onClick={() => {
+            this.setState({ showAddMenu: true });
+          }}
+        >
+          Add New Menu Item
+        </button>
+        {this.state.showAddMenu && (
+          <div className="cart">
+            <form onSubmit={this.createMeal}>
+              <ul className="form-container">
+                <li>
+                  <label>Menu Item Title:</label>
+                  <input
+                    name="title"
+                    type="text"
+                    required
+                    onChange={this.handleInput}
+                  ></input>
+                </li>
+                <li>
+                  <button className="button primary" type="submit">
+                    Save New Menu Item
+                  </button>
+                </li>
+              </ul>
+            </form>
+          </div>
+        )}
       </div>
     );
   }
@@ -50,4 +96,5 @@ class UpdateMenuScreen extends Component {
 export default connect((state) => ({ meals: state.meals.items }), {
   fetchMeals,
   deleteMeal,
+  createMeal,
 })(UpdateMenuScreen);
