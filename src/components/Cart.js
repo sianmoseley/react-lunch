@@ -103,7 +103,6 @@ class Cart extends Component {
                     <div>
                       {item.title} x {item.count}
                     </div>
-                    <button>-</button>
                     <button
                       className="button-remove"
                       onClick={() => this.props.removeFromCart(item)}

@@ -62,6 +62,10 @@ const Order = mongoose.model(
       name: String,
       department: String,
       additionalInfo: String,
+      processed: {
+        type: Boolean,
+        default: false,
+      },
       cartItems: [
         {
           _id: String,
@@ -80,7 +84,7 @@ app.post("/api/orders", async (req, res) => {
   if (
     !req.body.name ||
     !req.body.department ||
-    req.body.additionalInfo ||
+    //!req.body.additionalInfo ||
     !req.body.cartItems
   ) {
     return res.send({ message: "Data is required." });
@@ -93,6 +97,7 @@ app.get("/api/orders", async (req, res) => {
   const orders = await Order.find({});
   res.send(orders);
 });
+
 app.delete("/api/orders/:id", async (req, res) => {
   const order = await Order.findByIdAndDelete(req.params.id);
   res.send(order);

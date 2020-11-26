@@ -24,6 +24,8 @@ class Orders extends Component {
               <th>DEPARTMENT</th>
               <th>ADDITIONAL INFO</th>
               <th>ITEMS</th>
+              <th>BOXED UP?</th>
+              <th>UPDATE</th>
             </tr>
           </thead>
           <tbody>
@@ -40,6 +42,10 @@ class Orders extends Component {
                       {item.count} {" x "} {item.title}
                     </div>
                   ))}
+                </td>
+                <td>{order.processed.toString()}</td>
+                <td>
+                  <button>Update</button>
                 </td>
               </tr>
             ))}

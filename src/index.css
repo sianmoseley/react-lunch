@@ -180,6 +180,13 @@ footer {
   height: 100%;
 }
 
+@media (min-width: 320px) {
+  .order-details {
+    height: auto;
+    width: auto;
+  }
+}
+
 .order-details li {
   display: flex;
   justify-content: space-between;

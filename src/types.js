@@ -10,3 +10,5 @@ export const DELETE_MEAL = "DELETE_MEAL";
 export const CREATE_MEAL = "CREATE_MEAL";
 
 export const DECREASE_QUANTITY = "DECREASE_QUANTITY";
+
+export const UPDATE_ORDER = "UPDATE_ORDER";
