@@ -27,7 +27,9 @@ export const createMeal = (meal) => (dispatch) => {
     },
     body: JSON.stringify(meal),
   })
-    .then((res) => res.json())
+    //.then((res) => res.json())
+    .then((res) => res.text())
+    .then((text) => console.log(text))
     .then((data) => {
       dispatch({ type: CREATE_MEAL, payload: data });
     });
