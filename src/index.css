@@ -115,6 +115,7 @@ footer {
 .cart {
   padding: 0;
   margin: 0;
+  margin-left: 5px;
   display: flex;
 }
 
@@ -161,6 +162,12 @@ footer {
 .input {
   padding: 1rem;
   border: 0.1rem #c0c0c0 solid;
+}
+
+.submitOrderButton {
+  padding: 0.5rem;
+  border: 0.1rem #c0c0c0 solid;
+  background-color: #ffda00;
 }
 
 /* Order Details */
@@ -216,4 +223,38 @@ td {
 }
 th {
   text-align: left;
+}
+
+/* Admin Home Screen */
+
+.adminHomeScreen li {
+  list-style-type: none;
+}
+
+.adminLinks {
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Update Menu Screen */
+
+.currentMenuTitle {
+  margin-left: 20px;
+  padding: 0;
+}
+
+.addNewMeal {
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 0.5rem;
+  border: 0.1rem #c0c0c0 solid;
+  background-color: #ffda00;
+}
+
+.saveNewMeal {
+  padding: 0.5rem;
+  border: 0.1rem #c0c0c0 solid;
+  background-color: #ffda00;
 }

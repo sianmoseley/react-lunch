@@ -18,6 +18,12 @@ mongoose.connect(
   }
 );
 
+var db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error: "));
+db.once("open", function () {
+  console.log("Connected to database!");
+});
+
 const Meal = mongoose.model(
   "meals",
   new mongoose.Schema({

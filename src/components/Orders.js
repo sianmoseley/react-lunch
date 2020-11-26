@@ -13,7 +13,7 @@ class Orders extends Component {
     return !orders ? (
       <div>No Orders</div>
     ) : (
-      <div className="orders" key={orders._id}>
+      <div className="orders">
         <h2>Orders</h2>
         <table>
           <thead>
@@ -28,7 +28,7 @@ class Orders extends Component {
           </thead>
           <tbody>
             {orders.map((order) => (
-              <tr>
+              <tr key={order._id}>
                 <td>{order._id}</td>
                 <td>{order.createdAt}</td>
                 <td>{order.name}</td>

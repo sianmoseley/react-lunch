@@ -17,8 +17,8 @@ export default class AdminHomeScreen extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
-          <ul>
+        <div className="adminHomeScreen">
+          <ul className="adminLinks">
             <li>
               <Link to="/UpdateMenuScreen"> Update Menu</Link>
             </li>

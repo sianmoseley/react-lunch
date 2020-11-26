@@ -158,7 +158,7 @@ class Cart extends Component {
                         ></input>
                       </li>
                       <li>
-                        <button className="button primary" type="submit">
+                        <button className="submitOrderButton" type="submit">
                           Submit Order
                         </button>
                       </li>

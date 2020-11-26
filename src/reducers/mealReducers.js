@@ -1,6 +1,10 @@
 const { FETCH_MEALS, DELETE_MEAL, CREATE_MEAL } = require("../types");
 
-export const mealsReducer = (state = {}, action) => {
+const initialState = {
+  meals: [],
+};
+
+export const mealsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_MEALS:
       return { items: action.payload };

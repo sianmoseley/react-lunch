@@ -5,6 +5,8 @@ import { fetchMeals, deleteMeal, createMeal } from "../actions/mealActions";
 class UpdateMenuScreen extends Component {
   constructor(props) {
     super(props);
+
+    //this.createMeal = this.createMeal.bind(this);
     this.state = {
       meal: null,
       showAddMenu: false,
@@ -13,6 +15,7 @@ class UpdateMenuScreen extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props.meals);
     this.props.fetchMeals();
   }
 
@@ -37,9 +40,10 @@ class UpdateMenuScreen extends Component {
   }
 
   render() {
+    //const { meals = [] } = this.props;
     return (
       <div>
-        <h3>Current Menu</h3>
+        <h3 className="currentMenuTitle">Current Menu</h3>
         {!this.props.meals ? (
           <div>Loading...</div>
         ) : (
@@ -63,6 +67,7 @@ class UpdateMenuScreen extends Component {
           onClick={() => {
             this.setState({ showAddMenu: true });
           }}
+          className="addNewMeal"
         >
           Add New Menu Item
         </button>
@@ -80,7 +85,7 @@ class UpdateMenuScreen extends Component {
                   ></input>
                 </li>
                 <li>
-                  <button className="button primary" type="submit">
+                  <button className="saveNewMeal" type="submit">
                     Save New Menu Item
                   </button>
                 </li>
