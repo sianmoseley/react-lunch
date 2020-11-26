@@ -8,3 +8,5 @@ export const FETCH_ORDERS = "FETCH_ORDERS";
 
 export const DELETE_MEAL = "DELETE_MEAL";
 export const CREATE_MEAL = "CREATE_MEAL";
+
+export const DECREASE_QUANTITY = "DECREASE_QUANTITY";
